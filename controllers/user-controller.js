@@ -3,11 +3,12 @@ import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
+
 export const addUser=async(req,res,next)=>{
      const {name,email,password}=req.body;
       // name email password check
       const existingUser=await User.findOne({email});
-       if(existingUser){
+      if(existingUser){
           console.log({message:"user already exists"});
            return res.status(500).json({message:"user already exists"});
        }
@@ -45,6 +46,6 @@ export const addUser=async(req,res,next)=>{
             expiresIn:"7D"
           });
          console.log({message:"logged successfully"});
-     //     console.log({"token":token});
+      console.log(token);
          return res.status(201).json({message:"logged successfully",token});
 }

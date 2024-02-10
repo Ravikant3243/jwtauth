@@ -8,11 +8,6 @@ dotenv.config();
 const app=express();
  app.use(express.json());
 //  app.use((req,res,next)=>{
-//   const header=
-//      const decoded=jwt.verify(req.body,process.env.SECRET_KEY);
-//     console.log(decoded);
-//      next();
-// })
 // app.use((req,res,next)=>{
 //   const header=req.get('Authorization');
 //   const token=header.split("Bearer ")[1];
